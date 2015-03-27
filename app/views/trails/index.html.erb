@@ -1,4 +1,6 @@
 
+<h1>Your search results for <strong><%=@searched_city.split.map(&:capitalize)*' '%></strong>:</h1>
+
 <ul class="accordion" data-accordion>
   <%@search_results.each do |place|%>
     <li class="accordion-navigation">
@@ -10,8 +12,7 @@
         <%if place["activities"].first != nil%>
           <strong><%=place["activities"].first["activity_type_name"].capitalize%></strong>
           <p style="float:right">Length: <%=place["activities"].first["length"].round%> mi.</p>
-          <br>
-          Description: <%=place["activities"].first["description"].capitalize%>
+          <p><strong>Description:</strong> <%=place["activities"].first["description"].capitalize%></p>
         <%else%>
           We don't have enough information about this trail!
         <%end%>

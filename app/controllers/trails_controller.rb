@@ -13,6 +13,7 @@ class TrailsController < ApplicationController
 
   def look_up_results
     if params[:search_input]
+      @searched_city= params[:search_input]
       @search_results = TrailsHelper.get_searched_trails(params[:search_input])
     else
       @search_results = TrailsHelper.get_nearby_trails(params[:current_lat], params[:current_long])

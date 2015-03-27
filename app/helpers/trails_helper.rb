@@ -26,7 +26,28 @@ module TrailsHelper
     }
    return JSON.parse(response.raw_body)['places']
   end
-
-
-
 end
+
+# module Trail
+
+#   def self.name
+#     return trail.name
+#   end
+
+#   def self.location
+#     return "#{trail['city']}, #{trail['state']}"
+#   end
+
+#   def self.description
+#     return trail["activities"].first["description"].capitalize
+#   end
+
+#   def self.length
+#     return trail["activities"].first["length"].round
+#   end
+
+#   def self.type
+#     return place["activities"].first["activity_type_name"].capitalize
+#   end
+
+# end
