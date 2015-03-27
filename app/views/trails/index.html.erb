@@ -1,0 +1,22 @@
+
+<ul class="accordion" data-accordion>
+  <%@search_results.each do |place|%>
+    <li class="accordion-navigation">
+      <a href="#panel<%=@counter%>">
+        <div style="float:left"><%=place["name"]%></div>
+        <div style="text-align: right"><%=place["city"]%>, <%=place["state"]%></div>
+      </a>
+      <div id="panel<%=@counter%>" class="content">
+        <%if place["activities"].first != nil%>
+          <strong><%=place["activities"].first["activity_type_name"].capitalize%></strong>
+          <p style="float:right">Length: <%=place["activities"].first["length"].round%> mi.</p>
+          <br>
+          Description: <%=place["activities"].first["description"].capitalize%>
+        <%else%>
+          We don't have enough information about this trail!
+        <%end%>
+      </div>
+    </li>
+    <%@counter+=1%>
+  <%end%>
+</ul>
