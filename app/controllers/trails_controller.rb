@@ -2,7 +2,9 @@ class TrailsController < ApplicationController
 
   def index
     @counter = 1
-    look_up_results
+    @searched_city = params[:search_input]
+    @search_results = Trail.where(city: params[:search_input])
+    # look_up_results
   end
 
   def show
