@@ -11,6 +11,7 @@
       <div id="panel<%=@counter%>" class="content">
         <%if place["activities"].first != nil%>
           <strong><%=place["activities"].first["activity_type_name"].capitalize%></strong>
+          <div style="text-align: center"><strong>Rating:</strong> <%=place["activities"].first["rating"]%></div>
           <p style="float:right">Length: <%=place["activities"].first["length"].round%> mi.</p>
           <p><strong>Description:</strong> <%=place["activities"].first["description"].capitalize%></p>
         <%else%>
