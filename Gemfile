@@ -20,6 +20,8 @@ gem 'foundation-rails'
 
 gem 'foundation-icons-sass-rails'
 
+gem 'gmaps4rails'
+
 
 # gem 'rubygems'
 

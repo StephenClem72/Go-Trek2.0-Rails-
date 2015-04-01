@@ -19,12 +19,17 @@ $(document).ready(function(){
 
   //find location of user
   navigator.geolocation.getCurrentPosition(function(p){
-    var lat = p.coords.latitude
-    var long = p.coords.longitude
-    console.log(lat)
-    $('#current-latitude').attr('value', lat);
-    $('#current-longitude').attr('value', long)
+    // var lat = p.coords.latitude
+    // var long = p.coords.longitude
+    var latlng = new google.maps.LatLng(p.coords.latitude, p.coords.longitude);
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({'latLng': latlng}, function(res, status){
+      var city = res[0].address_components[3].long_name
+      $('#current-city').attr('value', city);
+    })
+    // $('#current-longitude').attr('value', long)
   })
+
 
 
 $(".login #cancel").click(function() {

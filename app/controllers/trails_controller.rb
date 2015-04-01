@@ -2,9 +2,9 @@ class TrailsController < ApplicationController
 
   def index
     @counter = 1
-    @searched_city = params[:search_input]
-    @search_results = Trail.where(city: params[:search_input])
-    # look_up_results
+    # @searched_city = params[:search_input]
+    # @search_results = Trail.where(city: params[:search_input])
+    look_up_results
   end
 
   def show
@@ -14,11 +14,13 @@ class TrailsController < ApplicationController
   private
 
   def look_up_results
-    if params[:search_input]
-      @searched_city= params[:search_input]
-      @search_results = TrailsHelper.get_searched_trails(params[:search_input])
+    if params[:search_input] != ""
+      @searched_city = params[:search_input]
+      @search_results = Trail.where(city: params[:search_input])
     else
-      @search_results = TrailsHelper.get_nearby_trails(params[:current_lat], params[:current_long])
+      puts params[:current_city]
+      @searched_city = params[:current_city]
+      @search_results = Trail.where(city: params[:current_city])
     end
   end
 
