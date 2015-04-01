@@ -2,20 +2,19 @@
 <h1>Your search results for <strong><%=@searched_city.split.map(&:capitalize)*' '%></strong>:</h1>
 
 <ul class="accordion" data-accordion>
-  <%@search_results.each do |place|%>
+  <%@search_results.each do |trail|%>
     <li class="accordion-navigation">
       <a href="#panel<%=@counter%>">
-        <div style="float:left"><%=place["name"]%></div>
-        <div style="text-align: right"><%=place["city"]%>, <%=place["state"]%></div>
+        <div style="float:left"><%=trail.name%></div>
+        <div style="text-align: right"><%=trail.city%>, <%=trail.state%></div>
       </a>
       <div id="panel<%=@counter%>" class="content">
-        <%if place["activities"].first != nil%>
-          <strong><%=place["activities"].first["activity_type_name"].capitalize%></strong>
-          <p style="float:right">Length: <%=place["activities"].first["length"].round%> mi.</p>
-          <p><strong>Description:</strong> <%=place["activities"].first["description"].capitalize%></p>
-        <%else%>
+          <strong><%=trail.type%></strong>
+          <div style="text-align: center"><strong>Rating:</strong> <%=trail.rating%></div>
+          <p><strong>Description:</strong> <%=trail.description%></p>
+
           We don't have enough information about this trail!
-        <%end%>
+
       </div>
     </li>
     <%@counter+=1%>

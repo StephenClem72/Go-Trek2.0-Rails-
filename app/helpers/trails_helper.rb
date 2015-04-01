@@ -4,7 +4,7 @@ require 'json'
 module TrailsHelper
 
   def self.get_searched_trails(city)
-    response = Unirest.get "https://trailapi-trailapi.p.mashape.com/?q[city_cont]=#{city}&radius=50",
+    response = Unirest.get "https://trailapi-trailapi.p.mashape.com/?q[city_cont]=#{city}&radius=100",
     headers:{
       "X-Mashape-Key" => "z8jP4kZrhYmshgYdNDnAGbpdHOVAp1Ana2MjsnrN9pdIA3B1wy"
     }
