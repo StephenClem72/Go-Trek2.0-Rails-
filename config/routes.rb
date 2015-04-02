@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'landing#index'
 
   resources :trails do
+    resources :comments
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
