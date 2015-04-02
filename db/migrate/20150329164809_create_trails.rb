@@ -5,7 +5,7 @@ class CreateTrails < ActiveRecord::Migration
       t.string :city
       t.string :state
       t.string :country
-      t.string :type
+      t.string :activity_type
       t.float :rating
       t.string :description
       t.float :latitude

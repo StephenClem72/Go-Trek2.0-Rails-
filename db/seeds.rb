@@ -20,7 +20,7 @@ def seed_trails(array)
           state: trail["state"],
           country: trail["country"],
           rating: trail["activities"].first["rating"],
-          type: ["activities"].first["activity_type_name"],
+          activity_type: ["activities"].first["activity_type_name"],
           latitude: trail["lat"],
           longitude: trail["lon"])
       else
