@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'landing#index'
 
   resources :trails do
-    resources :comments
+    resources :comments, except: [:edit, :new]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
