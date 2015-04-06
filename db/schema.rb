@@ -11,18 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150402223848) do
+ActiveRecord::Schema.define(version: 20150406200911) do
 
   create_table "reviews", force: :cascade do |t|
+    t.string   "title"
     t.string   "content"
-    t.integer  "rating"
+    t.float    "rating"
     t.integer  "trail_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "reviews", ["trail_id", "created_at"], name: "index_reviews_on_trail_id_and_created_at"
-  add_index "reviews", ["trail_id"], name: "index_reviews_on_trail_id"
 
   create_table "trails", force: :cascade do |t|
     t.string   "name"
@@ -30,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150402223848) do
     t.string   "state"
     t.string   "country"
     t.string   "activity_type"
+    t.float    "length"
     t.float    "rating"
     t.string   "description"
     t.float    "latitude"
