@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150402223848) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "reviews", ["trail_id", "created_at"], name: "index_reviews_on_trail_id_and_created_at"
   add_index "reviews", ["trail_id"], name: "index_reviews_on_trail_id"
 
   create_table "trails", force: :cascade do |t|

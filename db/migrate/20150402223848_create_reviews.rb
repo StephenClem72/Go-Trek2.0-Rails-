@@ -7,5 +7,7 @@ class CreateReviews < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+
+    add_index :reviews, [:trail_id, :created_at]
   end
 end
