@@ -38,7 +38,7 @@ def seed_trails(array)
 end
 
 def trailAPIdata(state)
-  response = Unirest.get "https://trailapi-trailapi.p.mashape.com/?q[state_cont]=#{state}",
+  response = Unirest.get "https://trailapi-trailapi.p.mashape.com/?limit=300&q[state_cont]=#{state}",
     headers:{
       "X-Mashape-Key" => "z8jP4kZrhYmshgYdNDnAGbpdHOVAp1Ana2MjsnrN9pdIA3B1wy"
     }

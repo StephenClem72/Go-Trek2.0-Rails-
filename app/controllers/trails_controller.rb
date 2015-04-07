@@ -19,7 +19,7 @@ class TrailsController < ApplicationController
     @trail = Trail.new(create_trail_params)
 
     if @trail.save
-      redirect_to "http://www.rubyonrails.org"
+      redirect_to action: "show", id: @trail.id
     else
       render 'new'
     end
