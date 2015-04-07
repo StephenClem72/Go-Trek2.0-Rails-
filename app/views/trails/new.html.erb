@@ -1,5 +1,19 @@
 <%= form_for @trail, url: {action: "create"} do |f| %>
 
+  <% if @trail.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@trail.errors.count, "error") %> prohibited
+        this trail from being saved:
+      </h2>
+      <ul>
+        <% @trail.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <%= f.label :trail_name%>
   <%= f.text_field :name %>
 
