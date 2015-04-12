@@ -2,8 +2,6 @@ class TrailsController < ApplicationController
 
   def index
     @counter = 1
-    # @searched_city = params[:search_input]
-    # @search_results = Trail.where(city: params[:search_input])
     look_up_results
   end
 
@@ -23,6 +21,10 @@ class TrailsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def edit
+
   end
 
 
